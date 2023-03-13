@@ -2,11 +2,6 @@ package hello.hellospring.Controller;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.service.MemberService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -44,6 +39,8 @@ public class MemberController {
     public String list(Model model) {
         List<Member> members = memberService.findMembers();
         model.addAttribute("members", members);
+
+        System.out.println("깃허브 테스트");
         return "members/memberList";
     }
 }
